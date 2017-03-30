@@ -1,12 +1,25 @@
+
+*.factorypath
+*.springBeans
+*.log
+.DS_Store
+.gradle
+.classpath
+.project
+.settings
+.idea
+.vertx
+.yardoc
+.yardopts
+bin
+build
+target
+out
+test-output
+Scratch.java
+ScratchTest.java
+test-results
+test-tmp
+*.iml
 *.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+src/gen

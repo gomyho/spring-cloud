@@ -1,0 +1,26 @@
+
+dependencies {
+    compile(
+    		'org.springframework.cloud:spring-cloud-starter-config',
+    	    'org.springframework.cloud:spring-cloud-starter-eureka',
+    	    "org.springframework.cloud:spring-cloud-starter-ribbon",
+    	    'org.springframework.cloud:spring-cloud-starter-feign',
+    	    'org.springframework.cloud:spring-cloud-starter-zuul',
+    		'org.springframework.boot:spring-boot-starter-actuator',
+    	    'org.springframework.boot:spring-boot-configuration-processor',
+    )
+    compile("org.springframework.boot:spring-boot-starter-web"){
+    	//exclude group:"org.apache.tomcat.embed"
+    	//exclude group:"org.apache.tomcat"
+		exclude module:'spring-boot-starter-logging'
+    }
+    compile(
+    	"com.netflix.feign:feign-httpclient"
+    )
+    testCompile(
+			"junit:junit:4.12"
+			)
+}
+springBoot{
+    mainClass = "vip.qianbai.cloud.client.CloudClientApplication"
+}

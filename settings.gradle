@@ -1,0 +1,2 @@
+
+include "cloud-client", "cloud-configuration","cloud-registry","cloud-service","cloud-serviceB","cloud-dashboard"

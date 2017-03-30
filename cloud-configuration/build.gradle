@@ -1,0 +1,25 @@
+dependencies {
+	
+    compile(
+    		'org.springframework.cloud:spring-cloud-starter-config',
+    	    'org.springframework.cloud:spring-cloud-starter-eureka',
+    	    //"org.springframework.cloud:spring-cloud-config-monitor",
+    	    "org.springframework.cloud:spring-cloud-config-server",
+    	    "org.springframework.boot:spring-boot-starter-security",
+    )
+    compile("org.springframework.boot:spring-boot-starter-web"){
+    	//exclude group:"org.apache.tomcat.embed"
+		exclude module:'spring-boot-starter-logging'
+    	//exclude group:"org.apache.tomcat"
+    }
+    //compile("org.springframework.boot:spring-boot-starter-jetty"){
+	//    	exclude group:"org.eclipse.jetty.websocket"
+    //}
+    testCompile(
+			"junit:junit:4.12",
+			"org.springframework.boot:spring-boot-starter-test",
+			)
+}
+springBoot{
+    mainClass = "vip.qianbai.cloud.configuration.ConfigServerApplication"
+}
