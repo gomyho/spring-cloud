@@ -12,10 +12,10 @@ import vip.qianbai.cloud.client.configuration.FeignConfiguration;
  * @since    JDK 7
  * @see FeignClientsConfiguration
  */
-@FeignClient(name="cloudServiceB",configuration=FeignConfiguration.class,
+@FeignClient(name="cloudServiceOrder",configuration=FeignConfiguration.class,
 fallback=HelloFallback.class)
-public interface HelloApiServiceB {
-	@RequestMapping("/v1/hello")
+public interface OrderApiService {
+	@RequestMapping("/order/hello")
 	public String hello();
 	
 }

@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service;
+package vip.qianbai.cloud.service.order;
 import java.util.Map;
 
 import org.apache.commons.lang.math.RandomUtils;

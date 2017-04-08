@@ -1,2 +1,2 @@
 
-include "cloud-client", "cloud-configuration","cloud-registry","cloud-service","cloud-serviceB","cloud-dashboard"
+include "cloud-client", "cloud-configuration","cloud-registry","cloud-service","cloud-service-order","cloud-dashboard"

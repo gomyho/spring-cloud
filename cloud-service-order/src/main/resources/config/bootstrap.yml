@@ -1,6 +1,6 @@
 spring: 
   application:
-    name: cloudServiceb
+    name: cloudServiceOrder
   profiles: 
     active: dev
   cloud: 

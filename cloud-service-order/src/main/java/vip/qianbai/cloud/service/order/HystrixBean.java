@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service;
+package vip.qianbai.cloud.service.order;
 import lombok.Getter;
 import lombok.Setter;
 

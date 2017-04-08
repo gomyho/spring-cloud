@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service;
+package vip.qianbai.cloud.service.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -16,10 +16,10 @@ import org.springframework.context.annotation.Configuration;
 
 //@EnableHystrix
 @EnableCircuitBreaker
-public class CloudServiceBApplication {
+public class CloudServiceOrderApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CloudServiceBApplication.class, args);
+		SpringApplication.run(CloudServiceOrderApplication.class, args);
 	}
     
 }
