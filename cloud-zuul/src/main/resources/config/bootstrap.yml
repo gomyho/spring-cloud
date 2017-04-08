@@ -1,0 +1,29 @@
+spring: 
+  application:
+    name: cloudZuul 
+  profiles: 
+    active: dev
+  cloud: 
+    config: 
+      username: user
+      password: 123
+      discovery: 
+        enabled: true
+        service-id: cloudConfigServer
+eureka: 
+  instance:
+    health-check-url: ${management.context-path}/health
+    statusPageUrlPath: ${management.context-path}/info
+    metadata-map:
+      management-port: ${management.port:8182}
+      #下面的key自定义，在turbine中统一收集数据用到，将多个应用定义在同一个集群节点里面，那么在同一个界面可以监控不同的app的熔断数据
+      cluster: MAIN
+  client: 
+    service-url: 
+      defaultZone: http://localhost:8761/eureka
+zuul: 
+  routes:
+    cloudServiceOrder: /orders/**
+logging: 
+  level:
+    org.springframework.cloud.consul: DEBUG

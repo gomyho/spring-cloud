@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "properties.zk.config",
+    "type": "vip.qianbai.cloud.service.config.ZookeeperConfigProperties",
+    "description": "A description for 'properties.zk.config.base-path'"
+  },
+  {
+    "name": "zk.config",
+    "type": "vip.qianbai.cloud.service.config.ZookeeperConfig",
+    "description": "A description for 'zk.config.connect-string'"
+  }
+]}
