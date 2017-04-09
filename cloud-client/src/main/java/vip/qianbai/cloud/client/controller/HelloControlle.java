@@ -1,5 +1,14 @@
 package vip.qianbai.cloud.client.controller;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.Charset;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -7,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.Getter;
 import lombok.Setter;
 import vip.qianbai.cloud.client.api.one.HelloApiService;
+import vip.qianbai.cloud.client.api.one.OrderApiService;
 
 
 /** 
@@ -22,10 +32,43 @@ public class HelloControlle {
 
 	@Autowired
 	HelloApiService helloApi;
-	
+	@Autowired
+	OrderApiService orderApi;
+	@Autowired
+	private LoadBalancerClient loadBalancer;
+
 	@RequestMapping("/sayHi")
 	@ResponseBody
 	public String sayHello() {
 		return helloApi.hello();
+	}
+	
+	@RequestMapping("/order")
+	@ResponseBody
+	public String getOrders(){
+		return orderApi.hello();
+	}
+	
+	@RequestMapping("/ribbon")
+	@ResponseBody
+	public String getRibbonOrders(){
+		ServiceInstance instance = loadBalancer.choose("cloudServiceOrder");
+		URI orderUri = URI.create(String.format("http://%s:%s", instance.getHost(), instance.getPort()));
+		StringBuilder sb = new StringBuilder();
+		
+		try {
+			URL u = new URL(orderUri.toString()+"/order/hello");
+			URLConnection conn = u.openConnection();
+			InputStream in = conn.getInputStream();
+			byte[] b = new byte[1024];
+			while(in.available()>0){
+				int size = in.read(b,0,b.length);	
+				sb.append(new String(b,0,size,Charset.forName("UTF-8")));
+			}
+			in.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sb.toString();
 	}
 }

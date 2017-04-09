@@ -24,11 +24,21 @@ eureka:
 feign:
   hystrix: 
     enabled: true 
+ribbon:
+  eureka:
+   enabled: false
+cloudServiceOrder:  
+  ribbon: 
+    listOfServers: localhost:8084
+cloudService:  
+  ribbon: 
+    listOfServers: localhost:8082
+    
 zuul: 
   prefix: api
   routes: 
     cloudService: /sa/**
-    cloudServiceb: /sb/**
+    cloudServiceOrder: /sb/**
 logging: 
   level:
     org.springframework.cloud.consul: DEBUG
