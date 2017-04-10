@@ -35,7 +35,7 @@ cloudService:
     listOfServers: localhost:8082
     
 zuul: 
-  prefix: api
+  prefix: /api
   routes: 
     cloudService: /sa/**
     cloudServiceOrder: /sb/**

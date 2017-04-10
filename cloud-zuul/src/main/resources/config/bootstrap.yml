@@ -24,6 +24,7 @@ eureka:
 zuul: 
   routes:
     cloudServiceOrder: /orders/**
+    cloudService: /hi/**
 logging: 
   level:
     org.springframework.cloud.consul: DEBUG

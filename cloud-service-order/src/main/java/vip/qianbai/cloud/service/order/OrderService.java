@@ -24,7 +24,7 @@ public class OrderService {
 			
 		}
 		hystrix.getStores(null);
-		return "hello ,this is service HELLO B";
+		return "hello ,this is service Order";
 	}
 	
 	
