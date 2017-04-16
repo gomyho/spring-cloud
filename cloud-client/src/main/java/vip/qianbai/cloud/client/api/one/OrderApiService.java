@@ -1,6 +1,7 @@
 package vip.qianbai.cloud.client.api.one;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.netflix.feign.FeignClientsConfiguration;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import vip.qianbai.cloud.client.configuration.FeignConfiguration;
@@ -15,7 +16,7 @@ import vip.qianbai.cloud.client.configuration.FeignConfiguration;
 @FeignClient(name="cloudServiceOrder",configuration=FeignConfiguration.class,
 fallback=HelloFallback.class)
 public interface OrderApiService {
-	@RequestMapping("/order/hello")
-	public String hello();
+	@RequestMapping("/order/hello/{what}")
+	public String hello(@PathVariable("what")String what);
 	
 }

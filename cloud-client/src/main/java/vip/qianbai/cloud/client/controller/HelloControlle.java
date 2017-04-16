@@ -46,7 +46,7 @@ public class HelloControlle {
 	@RequestMapping("/order")
 	@ResponseBody
 	public String getOrders(){
-		return orderApi.hello();
+		return orderApi.hello("order-direct");
 	}
 	
 	@RequestMapping("/ribbon")
@@ -57,7 +57,7 @@ public class HelloControlle {
 		StringBuilder sb = new StringBuilder();
 		
 		try {
-			URL u = new URL(orderUri.toString()+"/order/hello");
+			URL u = new URL(orderUri.toString()+"/order/hello/ribbon");
 			URLConnection conn = u.openConnection();
 			InputStream in = conn.getInputStream();
 			byte[] b = new byte[1024];

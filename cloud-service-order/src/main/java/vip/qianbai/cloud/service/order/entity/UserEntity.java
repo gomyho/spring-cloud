@@ -1,0 +1,28 @@
+package vip.qianbai.cloud.service.order.entity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+
+/** 
+ * @date    2017年4月12日 <br/> 
+ * @author   陈小峰
+ * @since    JDK 1.8
+ */
+@Data
+@Entity
+@Table(name="t_user")
+public class UserEntity {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	Long userId;
+	@Column
+	String userName;
+}
+

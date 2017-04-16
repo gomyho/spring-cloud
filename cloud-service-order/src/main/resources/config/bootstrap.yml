@@ -10,6 +10,14 @@ spring:
       discovery: 
         enabled: true
         service-id: cloudConfigServer
+  datasource:
+    url: "jdbc:mysql://localhost:3306/fruit?useUnicode=true&characterEncoding=UTF-8"
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 eureka: 
   instance:
     health-check-url: ${management.context-path}/health

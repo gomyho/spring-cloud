@@ -27,13 +27,14 @@ feign:
 ribbon:
   eureka:
    enabled: false
+   ConnectTimeout: 3000
+   ReadTimeout: 5000
 cloudServiceOrder:  
   ribbon: 
     listOfServers: localhost:8084
 cloudService:  
   ribbon: 
     listOfServers: localhost:8082
-    
 zuul: 
   prefix: /api
   routes: 

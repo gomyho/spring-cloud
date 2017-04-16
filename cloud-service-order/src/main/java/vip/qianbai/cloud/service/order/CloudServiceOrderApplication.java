@@ -7,6 +7,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableAutoConfiguration
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
 
 //@EnableHystrix
 @EnableCircuitBreaker
+@EnableJpaRepositories
 public class CloudServiceOrderApplication {
 
 	public static void main(String[] args) {
