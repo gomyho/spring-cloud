@@ -22,17 +22,22 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}",
                 "io.spring.gradle:dependency-management-plugin:0.5.6.RELEASE"
 		) 
+		classpath "com.github.jengelman.gradle.plugins:shadow:1.2.4"
 	}
+}
+plugins {
+  id "com.github.johnrengelman.shadow" version "1.2.4"
 }
 
 subprojects{
 	apply plugin: 'java'
 	apply plugin: 'eclipse'
 	apply plugin: 'spring-boot'
+	apply plugin: "com.github.johnrengelman.shadow"
 	apply plugin: "io.spring.dependency-management"
 	eclipse.project {
 		natures 'org.springsource.ide.eclipse.gradle.core.nature'
-	}	
+	}
 	version = '1.0'
 	//sourceCompatibility=1.8
 	//targetCompatibility=1.8

@@ -14,6 +14,6 @@ import vip.qianbai.cloud.service.order.entity.UserEntity;
 @Repository
 public interface UserRepo extends JpaRepository<UserEntity, Long>{
 
-	@Query("from #{#entityName} where userName = ?1")
+	@Query("from #{#entityName} where userName = :name")
 	UserEntity findByName(String name);
 }
