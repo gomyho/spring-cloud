@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since    JDK 7
  */
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/v1")
 public class OrderService {
 	@Autowired
 	OrderHystrixService hystrix;

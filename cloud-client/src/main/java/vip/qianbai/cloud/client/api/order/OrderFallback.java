@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.client.api.one;
+package vip.qianbai.cloud.client.api.order;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,11 +11,11 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-public class HelloFallback implements UserApiService {
+public class OrderFallback implements OrderApiService {
 
 	@Override
 	public String hello() {
-		return "hello falbackK";
+		return "hello order fallback";
 	}
 
 }

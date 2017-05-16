@@ -12,8 +12,8 @@ import vip.qianbai.cloud.client.configuration.FeignConfiguration;
  * @since    JDK 7
  * @see FeignClientsConfiguration
  */
-@FeignClient(name="cloudUserService",configuration=FeignConfiguration.class,
-fallback=HelloFallback.class)
+@FeignClient(name="cloudServiceUser",configuration=FeignConfiguration.class,
+fallback=UserFallback.class)
 public interface UserApiService {
 	@RequestMapping("/v1/hello")
 	public String hello();
