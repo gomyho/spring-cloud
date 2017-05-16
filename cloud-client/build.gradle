@@ -15,7 +15,7 @@ dependencies {
 		exclude module:'spring-boot-starter-logging'
     }
     compile(
-    	"com.netflix.feign:feign-httpclient"
+    	"io.github.openfeign:feign-httpclient"
     )
     testCompile(
 			"junit:junit:4.12"
