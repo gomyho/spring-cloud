@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service;
+package vip.qianbai.cloud.service.order.service;
 import java.util.Map;
 
 import org.apache.commons.lang.math.RandomUtils;
@@ -11,7 +11,6 @@ import lombok.Setter;
 
 
 /** 
- * TODO 该类的作用<br/>
  * @date    2017年2月21日 <br/> 
  * @author   陈小峰
  * @since    JDK 7
@@ -19,7 +18,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Component
-public class HystrixService {
+public class OrderHystrixService {
 
 	@HystrixCommand(fallbackMethod = "defaultStores")
     public Object getStores(Map<String, Object> parameters) {
@@ -27,10 +26,10 @@ public class HystrixService {
 		if(rdm<8){
 			throw new RuntimeException("test exception");
 		}
-    	return new HystrixBean("default");
+    	return new OrderHystrixBean("default");
     }
 
     public Object defaultStores(Map<String, Object> parameters) {
-    	return new HystrixBean("failure");
+    	return new OrderHystrixBean("failure");
     }
 }

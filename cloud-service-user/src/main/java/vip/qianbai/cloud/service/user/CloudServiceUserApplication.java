@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service;
+package vip.qianbai.cloud.service.user;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.springframework.boot.SpringApplication;
@@ -11,9 +11,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import vip.qianbai.cloud.service.config.ZookeeperConfig;
-import vip.qianbai.cloud.service.config.ZookeeperConfigProperties;
-import vip.qianbai.cloud.service.configuration.ZookeeperConfigPropertySourceLocator;
+import vip.qianbai.cloud.service.user.config.ZookeeperConfig;
+import vip.qianbai.cloud.service.user.config.ZookeeperConfigProperties;
+import vip.qianbai.cloud.service.user.configuration.ZookeeperConfigPropertySourceLocator;
 
 @Configuration
 @EnableAutoConfiguration
@@ -23,10 +23,10 @@ import vip.qianbai.cloud.service.configuration.ZookeeperConfigPropertySourceLoca
 
 //@EnableHystrix
 @EnableCircuitBreaker
-public class CloudServiceApplication {
+public class CloudServiceUserApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CloudServiceApplication.class, args);
+		SpringApplication.run(CloudServiceUserApplication.class, args);
 	}
     
 	@Bean

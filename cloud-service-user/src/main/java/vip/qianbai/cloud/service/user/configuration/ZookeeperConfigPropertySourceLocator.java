@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service.configuration;
+package vip.qianbai.cloud.service.user.configuration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +10,7 @@ import org.springframework.core.env.CompositePropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.PropertySource;
 
-import vip.qianbai.cloud.service.config.ZookeeperConfigProperties;
+import vip.qianbai.cloud.service.user.config.ZookeeperConfigProperties;
 
 
 /** 

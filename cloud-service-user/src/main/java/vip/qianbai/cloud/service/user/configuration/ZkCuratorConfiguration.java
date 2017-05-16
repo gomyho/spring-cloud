@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service.configuration;
+package vip.qianbai.cloud.service.user.configuration;
 
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import vip.qianbai.cloud.service.config.ZookeeperConfig;
+import vip.qianbai.cloud.service.user.config.ZookeeperConfig;
 
 /**
  * 

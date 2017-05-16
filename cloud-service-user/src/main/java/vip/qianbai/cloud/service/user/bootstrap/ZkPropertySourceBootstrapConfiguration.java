@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service.bootstrap;
+package vip.qianbai.cloud.service.user.bootstrap;
 import org.springframework.boot.bind.PropertySourcesPropertyValues;
 import org.springframework.boot.bind.RelaxedDataBinder;
 import org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration;
@@ -11,9 +11,6 @@ import org.springframework.core.env.CompositePropertySource;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MutablePropertySources;
 import org.springframework.core.env.StandardEnvironment;
-
-import lombok.Getter;
-import lombok.Setter;
 
 
 /** 

@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service;
+package vip.qianbai.cloud.service.user.service;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,10 +11,10 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-public class HystrixBean {
+public class UserHystrixBean {
 
 	String name ;
-	public HystrixBean(String name){
+	public UserHystrixBean(String name){
 		this.name = name;
 	}
 }

@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service.config;
+package vip.qianbai.cloud.service.user.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import lombok.Getter;

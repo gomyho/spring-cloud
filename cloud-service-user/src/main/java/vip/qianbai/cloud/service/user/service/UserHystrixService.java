@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service.order;
+package vip.qianbai.cloud.service.user.service;
 import java.util.Map;
 
 import org.apache.commons.lang.math.RandomUtils;
@@ -19,7 +19,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Component
-public class HystrixService {
+public class UserHystrixService {
 
 	@HystrixCommand(fallbackMethod = "defaultStores")
     public Object getStores(Map<String, Object> parameters) {
@@ -27,10 +27,10 @@ public class HystrixService {
 		if(rdm<8){
 			throw new RuntimeException("test exception");
 		}
-    	return new HystrixBean("default");
+    	return new UserHystrixBean("default");
     }
 
     public Object defaultStores(Map<String, Object> parameters) {
-    	return new HystrixBean("failure");
+    	return new UserHystrixBean("failure");
     }
 }

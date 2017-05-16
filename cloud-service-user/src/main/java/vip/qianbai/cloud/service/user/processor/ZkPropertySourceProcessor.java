@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.processor;
+package vip.qianbai.cloud.service.user.processor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;
 import org.springframework.core.env.ConfigurableEnvironment;

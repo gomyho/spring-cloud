@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service.order;
+package vip.qianbai.cloud.service.order.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,18 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/order")
 public class OrderService {
 	@Autowired
-	HystrixService hystrix;
+	OrderHystrixService hystrix;
 	
 	@RequestMapping("/hello")
 	public String hello(){
-		System.out.println("it's B");
 		try{
 			Thread.sleep(100);
 		}catch(Exception e){
 			
 		}
 		hystrix.getStores(null);
-		return "hello ,this is service HELLO B";
+		return "hello ,this is service order";
 	}
 	
 	
