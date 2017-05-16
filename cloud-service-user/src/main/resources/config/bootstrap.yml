@@ -1,6 +1,6 @@
 spring: 
   application:
-    name: cloudService 
+    name: cloudUserService 
   profiles: 
     active: dev
   cloud: 

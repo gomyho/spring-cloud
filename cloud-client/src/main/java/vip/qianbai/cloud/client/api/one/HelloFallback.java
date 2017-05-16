@@ -11,7 +11,7 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-public class HelloFallback implements HelloApiService {
+public class HelloFallback implements UserApiService {
 
 	@Override
 	public String hello() {
