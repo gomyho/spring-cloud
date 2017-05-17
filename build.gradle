@@ -13,14 +13,14 @@ buildscript {
         mavenCentral()
     }
     ext {
-		springBootVersion = '1.3.5.RELEASE'
+		springBootVersion = '1.5.2.RELEASE'
 	}
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}",
-                "io.spring.gradle:dependency-management-plugin:0.5.6.RELEASE"
+                "io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE"
 		) 
 	}
 }
@@ -28,16 +28,15 @@ buildscript {
 subprojects{
 	apply plugin: 'java'
 	apply plugin: 'eclipse'
-	apply plugin: 'spring-boot'
+	apply plugin: 'org.springframework.boot'
 	apply plugin: "io.spring.dependency-management"
 	eclipse.project {
 		natures 'org.springsource.ide.eclipse.gradle.core.nature'
 	}	
 	version = '1.0'
-	//sourceCompatibility=1.8
-	//targetCompatibility=1.8
+	sourceCompatibility=1.8
+	targetCompatibility=1.8
     [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-    ext['jetty.version'] = '9.2.15.v20160210'//9.3.7.v20160115需要jdk8以上 ，java7用：9.2.15.v20160210
 	ext{
 		//运行时加程序参数：-Pprofile=dev
 		if (project.hasProperty('profile')) {
@@ -45,42 +44,31 @@ subprojects{
 	    }else{
 	    	profile = "dev"	    	
 	    }
-		bootVersion ="1.3.5.RELEASE"
-		springVersion="4.2.0.RELEASE"
-		zookeeperVersion="3.4.6"
-		hessianVersion="4.0.7"
-		log4j="1.7.21"
-		lombok="1.16.10"
-		logback="1.1.7"
 	}
 	repositories {
 		mavenLocal()
 	    mavenCentral()
 	}
 	dependencies {
-        compile("org.projectlombok:lombok:${lombok}")
+        compile("org.projectlombok:lombok")
         compile(
-			     "ch.qos.logback:logback-core:${logback}",		
-			     "ch.qos.logback:logback-classic:${logback}",		
-			     "org.slf4j:slf4j-api:${log4j}",
-			     "org.slf4j:jcl-over-slf4j:${log4j}",
+			     "ch.qos.logback:logback-core",		
+			     "ch.qos.logback:logback-classic",		
+			     "org.slf4j:slf4j-api",
+			     "org.slf4j:jcl-over-slf4j",
 			    )
 		 testCompile 'junit:junit:4.12'
     }
     eclipse.project {
 		natures 'org.springsource.ide.eclipse.gradle.core.nature'
 	}
-	sourceSets {
-		main {
-			resources {
-				srcDirs = ["profiles/$profile","profiles/public"]
-			}
-		}
-	}
 	dependencyManagement {
 	   imports {
-		    mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Brixton.SR7'
+		    mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Dalston.RELEASE'
 		  }
+		/**dependencies{
+		  dependency "io.github.openfeign:feign-httpclient:9.5.0"
+		}**/
 	}
     configurations{
 		compile.exclude module: "spring-boot-starter-logging"
@@ -99,16 +87,3 @@ allprojects{
 		providedRuntime
 	}
 }
-/**
-dependencies {
-    compile(
-    		'org.springframework.cloud:spring-cloud-starter-config',
-    	    'org.springframework.cloud:spring-cloud-starter-eureka',
-    	    "org.springframework.cloud:spring-cloud-config-server",
-    )
-    testCompile(
-			"junit:junit:4.12",
-			"org.springframework.boot:spring-boot-starter-test",
-			)
-}
-**/

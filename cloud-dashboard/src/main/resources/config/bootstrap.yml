@@ -22,7 +22,7 @@ eureka:
     service-url: 
       defaultZone: http://localhost:8761/eureka
 turbine:
-  app-config: cloudService
+  app-config: cloudServiceUser
   combine-host-port: true
     # metadata['xxx'] ,the xxx 必须是被监控的eureka.instance.metadata-map下面的一个键
   clusterNameExpression: metadata['cluster']

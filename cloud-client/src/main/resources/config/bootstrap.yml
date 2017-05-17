@@ -27,8 +27,8 @@ feign:
 zuul: 
   prefix: api
   routes: 
-    cloudService: /sa/**
-    cloudServiceb: /sb/**
+    cloudServiceUser: /user/**
+    cloudServiceOrder: /order/**
 logging: 
   level:
     org.springframework.cloud.consul: DEBUG
