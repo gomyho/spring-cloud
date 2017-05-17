@@ -1,6 +1,5 @@
 package vip.qianbai.cloud.client.controller;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
@@ -15,9 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.Getter;
 import lombok.Setter;
-import vip.qianbai.cloud.client.api.one.OrderApiService;
 import vip.qianbai.cloud.client.api.one.UserApiService;
->>>>>>> develop
+import vip.qianbai.cloud.client.api.order.OrderApiService;
 
 
 /** 
@@ -34,9 +32,11 @@ public class HelloControlle {
 	@Autowired
 	OrderApiService orderApi;
 	@Autowired
-	private LoadBalancerClient loadBalancer;
-	@Autowired
 	UserApiService helloApi;
+	
+	@Autowired
+	private LoadBalancerClient loadBalancer;
+	
 	@RequestMapping("/sayHi")
 	@ResponseBody
 	public String sayHello() {

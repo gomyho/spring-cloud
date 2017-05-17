@@ -14,7 +14,7 @@ import lombok.Setter;
 public class OrderFallback implements OrderApiService {
 
 	@Override
-	public String hello() {
+	public String hello(String what) {
 		return "hello order fallback";
 	}
 
