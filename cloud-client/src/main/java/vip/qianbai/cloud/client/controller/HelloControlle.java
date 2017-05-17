@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.Getter;
 import lombok.Setter;
-import vip.qianbai.cloud.client.api.one.HelloApiService;
 import vip.qianbai.cloud.client.api.one.OrderApiService;
+import vip.qianbai.cloud.client.api.one.UserApiService;
+>>>>>>> develop
 
 
 /** 
@@ -31,12 +32,11 @@ import vip.qianbai.cloud.client.api.one.OrderApiService;
 public class HelloControlle {
 
 	@Autowired
-	HelloApiService helloApi;
-	@Autowired
 	OrderApiService orderApi;
 	@Autowired
 	private LoadBalancerClient loadBalancer;
-
+	@Autowired
+	UserApiService helloApi;
 	@RequestMapping("/sayHi")
 	@ResponseBody
 	public String sayHello() {

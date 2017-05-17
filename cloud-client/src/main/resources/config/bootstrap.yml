@@ -39,8 +39,8 @@ ribbon:
 zuul: 
   prefix: /api
   routes: 
-    cloudService: /sa/**
-    cloudServiceOrder: /sb/**
+    cloudServiceUser: /user/**
+    cloudServiceOrder: /order/**
 logging: 
   level:
     org.springframework.cloud.consul: DEBUG

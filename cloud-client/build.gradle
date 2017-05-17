@@ -11,12 +11,10 @@ dependencies {
     	    'org.springframework.boot:spring-boot-configuration-processor',
     )
     compile("org.springframework.boot:spring-boot-starter-web"){
-    	//exclude group:"org.apache.tomcat.embed"
-    	//exclude group:"org.apache.tomcat"
 		exclude module:'spring-boot-starter-logging'
     }
     compile(
-    	"com.netflix.feign:feign-httpclient"
+    	"io.github.openfeign:feign-httpclient"
     )
     testCompile(
 			"junit:junit:4.12"
