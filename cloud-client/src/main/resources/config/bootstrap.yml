@@ -26,15 +26,16 @@ feign:
     enabled: true 
 ribbon:
   eureka:
-   enabled: false
+   enabled: true
    ConnectTimeout: 3000
    ReadTimeout: 5000
-cloudServiceOrder:  
-  ribbon: 
-    listOfServers: localhost:8084
-cloudService:  
-  ribbon: 
-    listOfServers: localhost:8082
+#cloudServiceOrder:  
+#  ribbon: 
+#    listOfServers: localhost:8084
+#cloudService:  
+#  ribbon: 
+#    listOfServers: localhost:8082
+#下面通过反向代理自动从eureka的注册中心对应的服务id去转发请求。
 zuul: 
   prefix: /api
   routes: 

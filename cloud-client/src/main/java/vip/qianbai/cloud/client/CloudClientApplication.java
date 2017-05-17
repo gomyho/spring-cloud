@@ -10,6 +10,7 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -33,7 +34,7 @@ import vip.qianbai.cloud.client.ribbon.annotation.IgnoreCfg;
  */
 @Configuration
 @EnableConfigurationProperties
-@SpringBootApplication
+@SpringBootApplication(exclude=DataSourceAutoConfiguration.class)
 //@EnableEurekaClient
 //same as discovery client
 @EnableDiscoveryClient
