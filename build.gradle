@@ -71,9 +71,10 @@ subprojects{
 	   imports {
 		    mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Dalston.RELEASE'
 		  }
-		/**dependencies{
+		dependencies{
 		  dependency "io.github.openfeign:feign-httpclient:9.5.0"
-		}**/
+		  dependency "io.reactivex.rxjava2:rxjava:2.1.0"
+		}
 	}
     configurations{
 		compile.exclude module: "spring-boot-starter-logging"
