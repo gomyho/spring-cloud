@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+var page = {
+        init: function(){
+            $("#upload").click($.proxy(this.upload, this));
+        },
+         
+        upload: function(){
+            var file = $("#file")[0].files[0],  //文件对象
+                name = file.name,        //文件名
+                size = file.size,        //总大小
+                succeed = 0;
+                  
+            var shardSize = 2 * 1024 * 1024,     //以2MB为一个分片
+                shardCount = Math.ceil(size / shardSize);   //总片数
+                  
+            for(var i = 0;i < shardCount;++i){
+                //计算每一片的起始与结束位置
+                var start = i * shardSize,
+                    end = Math.min(size, start + shardSize);
+ 
+                //构造一个表单，FormData是HTML5新增的
+                var form = new FormData();
+                form.append("file", file.slice(start,end));  //slice方法用于切出文件的一部分
+                form.append("name", name);
+                form.append("totalSlice", shardCount);   //总片数
+                form.append("index", i + 1);        //当前是第几片
+                 
+                //Ajax提交
+                $.ajax({
+                    url: "/files",
+                    type: "POST",
+                    data: form,
+                    async: true,         //异步
+                    processData: false,  //很重要，告诉jquery不要对form进行处理
+                    contentType: false,  //很重要，指定为false才能形成正确的Content-Type
+                    dataType:"json",
+                    success: function(data){
+                        ++succeed;
+                        console.log(data);
+                        $("#output").text(succeed + " / " + shardCount);
+                    },error:function(data){
+                        console.log(data);                    	
+                    }
+                });
+            }
+        }
+    };
+    $(function(){
+        page.init();
+    });
+</script>
 <meta charset="UTF-8">
-<title>upload file through zuul proxy</title>
+<title>file shard upload</title>
+
 </head>
 <body>
-<form action="/api/v1/sa/upload">
-	<input type="file" />
-	<input type="text" name="desc"/>
-</form>
+	<input type="file" name="file" id="file" />
+    <button id="upload">上传</button>
 </body>
 </html>
