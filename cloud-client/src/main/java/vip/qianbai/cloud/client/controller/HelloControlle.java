@@ -11,6 +11,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -46,6 +47,8 @@ public class HelloControlle {
 	@RequestMapping("/order")
 	@ResponseBody
 	public String getOrders(){
+		MultipartFile report = orderApi.report();
+		System.out.println(report.getName());
 		return orderApi.hello("order-direct");
 	}
 	

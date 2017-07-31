@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.service;
+package vip.qianbai.cloud.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

@@ -1,4 +1,4 @@
-package vip.qianbai.cloud.client.api.one;
+package vip.qianbai.cloud.client.api.order;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Configuration;
 

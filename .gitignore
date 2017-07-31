@@ -21,5 +21,8 @@ ScratchTest.java
 test-results
 test-tmp
 *.iml
+*.eml
 *.class
 src/gen
+.eml
+.iml

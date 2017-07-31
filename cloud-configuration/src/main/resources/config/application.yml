@@ -12,8 +12,8 @@ spring:
           aa: bb
         git: 
 #          uri: https://github.com/gomyho/cloud-config-files
-#          uri: file:///E:/gitrepo/cloud-config-files
-          uri: /opt/workspace/sts/private/cloud-config-files
+          uri: file:///F:/workspace/gitrepo/cloud-config-files
+#          uri: /opt/workspace/sts/private/cloud-config-files
           username: gomyho@qq.com
           password: woai8mfxc
           searchPaths: '{application}'
@@ -31,7 +31,7 @@ security:
     password: 123 
 encrypt: 
   key-store:
-    location: file:///E:/usr/git/cloud/server.jks
+    location: file:///F:/workspace/usr/git/cloud/server.jks
     password: 123456
     alias: mytestkey
     secret: 123456

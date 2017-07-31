@@ -1,4 +1,6 @@
 package vip.qianbai.cloud.client.api.order;
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +18,11 @@ public class OrderFallback implements OrderApiService {
 	@Override
 	public String hello(String what) {
 		return "hello order fallback";
+	}
+
+	@Override
+	public MultipartFile report() {
+		return null;
 	}
 
 }

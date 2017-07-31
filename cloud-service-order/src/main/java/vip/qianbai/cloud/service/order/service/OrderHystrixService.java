@@ -9,6 +9,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.Getter;
 import lombok.Setter;
 
+import static java.lang.System.out;
+
 
 /** 
  * @date    2017年2月21日 <br/> 
@@ -24,6 +26,7 @@ public class OrderHystrixService {
     public Object getStores(Map<String, Object> parameters) {
 		int rdm = RandomUtils.nextInt(10);
 		if(rdm<8){
+			System.out.println("exception");
 			throw new RuntimeException("test exception");
 		}
     	return new OrderHystrixBean("default");
