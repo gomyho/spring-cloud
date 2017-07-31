@@ -26,7 +26,7 @@ hystrix:
     enabled: true
     polling-interval-ms: 1000
 zuul: 
-  routes:
+  routes: 
     cloudServiceOrder: /orders/**
     cloudService: /hi/**
 logging: 

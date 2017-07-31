@@ -24,7 +24,4 @@ public class UserService {
 		return "hello ,this is service user";
 	}
 	
-	
-	
-	
 }

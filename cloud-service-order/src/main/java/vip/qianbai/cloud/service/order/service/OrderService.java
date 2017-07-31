@@ -1,5 +1,8 @@
 package vip.qianbai.cloud.service.order.service;
 import java.io.File;
+import java.util.Enumeration;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,7 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+
+import com.google.gson.Gson;
 
 import vip.qianbai.cloud.service.order.repo.UserRepo;
 
@@ -29,14 +33,13 @@ public class OrderService {
 	
 	@ResponseBody
 	@RequestMapping("/hello/{what}")
-	public String hello(@PathVariable("what") String what){
-		try{
-			Thread.sleep(100);
-		}catch(Exception e){
-			
-		}
+	public String hello(@PathVariable("what") String what,HttpServletRequest request){
+		String prefix = request.getHeader("Set-Cookie");
+		System.out.println(prefix);
+		prefix = request.getHeader("Cookie");
+		System.out.println(prefix);
 		hystrix.getStores(null);
-		return "hello ,this is service order";
+		return "hello ,this is service order "+ what;
 	}
 	
 	@RequestMapping("/report")

@@ -1,3 +1,1 @@
 # Environment Post Processors
-org.springframework.boot.env.EnvironmentPostProcessor=\
-vip.qianbai.cloud.processor.ZkPropertySourceProcessor
